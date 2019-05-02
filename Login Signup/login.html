@@ -1,0 +1,233 @@
+<html>
+<head>
+
+<style>
+body
+{
+width:0px;
+height: 0px;
+font-family: sans-serif;
+background:  #DAA822;
+}
+.box
+{
+
+    width:350px;
+    padding:50px;
+    position:absolute;
+    top:50%;
+    left:20%;
+    transform: translate(50%,-50%);
+    background:#453B20;
+    text-align: center;
+
+}
+
+.box:hover{
+  position:absolute;
+  transition-duration: 0.5s;
+  transform: translate(50%,-53%);
+  box-shadow: 0 0 10px #453B20;
+  background: transparent;
+}
+
+
+.box h1 {
+  background-image: url(color2.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size: 49px;
+  padding: 0px;
+  margin: 0;
+  letter-spacing: 7px;
+  text-transform: capitalize;
+  -webkit-background-clip: text;
+  font-weight: 400px;
+  text-align: center;
+  color: transparent;
+}
+.box input[type="text"],.box input[type="password"]{
+    border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid dodgerblue;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: yellow;
+  border-radius: 24px;
+  transition: 0.25s;
+
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+width:280px;
+border-color:red;
+}
+
+.box input[type="submit"]
+{
+    border:0;
+    background:none;
+    display:block;
+    margin:20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding:14px 40px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor:pointer;
+}
+.box input[type="submit"]:hover
+{
+    background:#2ecc71;
+}
+.para {
+  text-align: center;
+
+}
+.para1 {
+  text-align: center;
+
+}
+.dropbtn {
+  background-color: #66ff66;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+.drop select{
+  background-color:red;
+}
+/*http://i68.tinypic.com/9t3d3d.png  */
+
+
+select{
+    border:1px solid dodgerblue;
+    padding: .8rem 3rem .8rem .5rem;
+    border-radius: 5px;
+
+    color:blac5;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+
+
+}
+
+.imgBgMethod{
+    display: inline-block;
+    position: relative;
+}
+
+.imgBgMethod select{
+    background: #fff url("http://i68.tinypic.com/9t3d3d.png ") no-repeat 95% 50%;
+}
+
+
+
+
+
+select:focus{
+    border: 2px solid blue;
+    outline:none;
+}
+
+select::-ms-expand{
+    display: none;
+}
+
+
+</style>
+</head>
+<body>
+  <br>
+  <br>
+
+<div class="box" action ="Signup.html" method="post">
+<center><h1> Signup </h1></center>
+<br>
+<form action="Signup.html" onsubmit="return validation()" class="bg-light" method="post">
+<input type="text" placeholder="Username" name="usr" id="user" autocomplete="off">
+<span id="username" class="text-danger font-weight-bold"> </span>
+
+<input type="password" placeholder="Password" name="pass" id="pass" autocomplete="off">
+<span id="passwords" class="text-danger font-weight-bold"> </span>
+
+
+<input type="submit" value="Login" name="submit" class="btn btn-success">
+
+</form>
+</div>
+
+<script type="text/javascript">
+function validation(){
+
+  var user = document.getElementById('user').value;
+  var pass = document.getElementById('pass').value;
+
+  if(user == ""){
+    document.getElementById('username').innerHTML =" ** Please fill the username field";
+    return false;
+  }
+  if((user.length <= 2) || (user.length > 20)) {
+    document.getElementById('username').innerHTML =" ** Username length must be between 2 and 20";
+    return false;
+  }
+  if(!isNaN(user)){
+    document.getElementById('username').innerHTML =" ** only characters are allowed";
+    return false;
+  }
+
+  if(pass == ""){
+    document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+    return false;
+  }
+  if((pass.length <= 5) || (pass.length > 20)) {
+    document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+    return false;
+  }
+
+}
+</script>
+
+</body>
+</html>
